@@ -1,9 +1,4 @@
-# from flask import Flask
-# app = Flask(__name__)
 
-# @app.route("/")
-# def inici():
-#     return "hello world y adios"
 
 from flask import Flask,render_template,request
 app = Flask(__name__)
