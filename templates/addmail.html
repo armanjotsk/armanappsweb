@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Afegir Email{% endblock %}
+
+{% block content %}
+    <h1>Afegir Nou Usuari</h1>
+    
+    <form action="/addmail" method="POST">
+        <input type="text" name="nombre" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Correu electrònic" required>
+        <button type="submit">Guardar</button>
+    </form>
+
+    {% if ok %}
+        <div class="result-box">
+            {{ ok }}
+        </div>
+    {% elif error %}
+        <div class="error-box">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <p style="margin-top: 20px; font-size: 0.9rem;">
+        Vols buscar? <a href="/getmail">Torna al cercador</a>
+    </p>
+{% endblock %}

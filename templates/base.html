@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gestor de Correus{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/getmail">Buscar (Get)</a> |
+            <a href="/addmail">Afegir (Add)</a>
+        </nav>
+        <hr>
+        
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

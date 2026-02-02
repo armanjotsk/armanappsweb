@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Buscar Email{% endblock %}
+
+{% block content %}
+    <h1>Buscar Usuari</h1>
+    
+    <form action="/getmail" method="POST">
+        <input type="text" name="nombre" placeholder="Nom de l'usuari" value="{{ nom }}" required>
+        <button type="submit">Cercar Email</button>
+    </form>
+
+    {% if email %}
+        <div class="result-box">
+            <strong>Email trobat:</strong><br> {{ email }}
+        </div>
+    {% elif error %}
+        <div class="error-box">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <p style="margin-top: 20px; font-size: 0.9rem;">
+        No existeix? <a href="/addmail">Afegeix-lo aquí</a>
+    </p>
+{% endblock %}
